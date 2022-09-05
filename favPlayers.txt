@@ -1,0 +1,23 @@
+, 23
+, 3
+, 4
+, 6
+, 7
+, 9
+, 17
+, 18
+, 21
+, 1
+, 5
+, 8
+, 11
+, 12
+, 13
+, 14
+, 15
+, 16
+, 19
+, 20
+, 22
+C:\Users\Teodor\Desktop\ALGEBRA 4\OOP .NET\PROJEKT\igrači\Vrsaljko.jpg, 2
+, 10

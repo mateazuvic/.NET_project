@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp.StartingEleven"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lang="clr-namespace:WpfApp.Properties"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Court" Height="450" Width="800">
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="Court" Width="600" Height="400">
+            <Grid.Background>
+                <ImageBrush ImageSource="Resources/footballCourt.jpg"/>
+            </Grid.Background>
+            <UniformGrid x:Name="Grids" Grid.Row="1" 
+                     VerticalAlignment="Stretch"
+                     HorizontalAlignment="Stretch">
+
+
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch"
+                      Grid.Row="1" x:Name="gridFavorite"/>
+                    <Button x:Name="btnSettings" Grid.ColumnSpan="2" Width="70" Height="30" Content="{x:Static lang:Resources.Postavke}" Margin="-50,-315,-50,0" Click="btnSettings_Click"/>
+
+                    <Grid VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch" 
+                      Grid.Column="2" 
+                      x:Name="gridOpponent" />
+
+                </Grid>
+            </UniformGrid>
+        </Grid>
+    </Viewbox>
+</Window>

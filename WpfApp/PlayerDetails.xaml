@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfApp.PlayerDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lang="clr-namespace:WpfApp.Properties"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="PlayerDetails" Height="700" Width="400" FontSize="20" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+   
+    
+    <Viewbox Stretch="Fill">
+        <Grid x:Name="grid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="DarkSlateGray" Offset="0"/>
+                    <GradientStop Color="LightSlateGray" Offset="0.5"/>
+                    <GradientStop Color="CadetBlue" Offset="0.7"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="Background.GradientStops[1].Offset"
+                                    To="1"  
+                                    Duration="0:0:3" 
+                                    AutoReverse="True" 
+                                    RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image x:Name="imgPlayer" Grid.Row="0" Width="190"  Height="200" Source="Resources/football-player-1426973-1208513.png" Margin="50,0,50,0"></Image>
+            <Label x:Name="lblName" Grid.Row="1" Height="40" Content="{x:Static lang:Resources.Ime}" Margin="80,20,60,20"></Label>
+            <Label x:Name="lblNameBox" Grid.Row="1" Height="40" Content="" Margin="160,20,60,20" FontWeight="Bold"></Label>
+            <Label x:Name="lblNbr"  Grid.Row="2" Height="40" Content="{x:Static lang:Resources.Broj}" Margin="80,20,100,20"></Label>
+            <Label x:Name="lblNbrBox" Grid.Row="2" Height="40" Content="" Margin="180,20,100,20" FontWeight="Bold"></Label>
+            <Label x:Name="lblPos" Grid.Row="3" Height="40" Content="{x:Static lang:Resources.Pozicija}" Margin="80,20,100,20"></Label>
+            <Label x:Name="lblPosBox" Grid.Row="3" Height="40" Content="" Margin="180,20,90,20" FontWeight="Bold"></Label>
+            <Label x:Name="lblGoals"  Grid.Row="4" Height="40" Content="{x:Static lang:Resources.Golovi}" Margin="80,20,100,20"></Label>
+            <Label x:Name="lblGoalsBox"  Grid.Row="4" Height="40" Content="" Margin="190,20,80,20" FontWeight="Bold"></Label>
+            <Label x:Name="lblYellow"  Grid.Row="5" Height="40" Content="{x:Static lang:Resources.Zuti}" Margin="80,20,100,20"></Label>
+            <Label x:Name="lblYellowBox"  Grid.Row="5" Height="40" Content="" Margin="250,20,20,20" FontWeight="Bold"></Label>
+            <Label x:Name="lblCaptain"  Grid.Row="6" Height="40" Content="" Margin="100,20,70,20" FontSize="25" FontWeight="Bold"></Label>
+            <Button x:Name="btnClose"  Grid.Row="7" Height="50" Content="{x:Static lang:Resources.Zatvori}" Margin="80,20,100,20" Click="btnClose_Click"></Button>
+        </Grid>
+    </Viewbox>
+</Window>
